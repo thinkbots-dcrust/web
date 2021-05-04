@@ -1,10 +1,10 @@
-name: Node.js CI
+name: Deploy Dev App
 
 on:
   push:
-    branches: [ development ]
+    branches: [ dev ]
   pull_request:
-    branches: [ development ]
+    branches: [ dev ]
 
 jobs:
   build:
