@@ -1,20 +1,24 @@
 import MainLogo from "components/MainLogo";
-import styled from 'styled-components'
+import styled from 'styled-components';
+import About from "components/About";
+import Featured from "components/Featured";
 
 function Homepage() {
   return (
     <MainWrapper>
       <MainLogo />
-      <Heading>Coming Soon</Heading>
+      <Heading>Meet the T of DCRUST</Heading>
+      <About />
+      <Featured />
     </MainWrapper>
   );
 }
 
-const Heading = styled.h1`
+const Heading = styled.p`
 color:white;
 font-size:20px;
 text-align:center;
-font-family:arial;
+font-family:'Bangers', cursive;
 animation-name:coming;
 		animation-timing-function:ease-in-out;
 		animation-duration:3s;
@@ -36,9 +40,10 @@ animation-name:coming;
   }
 }
 `
+
 const MainWrapper = styled.div`
 background-color:black;
-height:100vh;
+height:500vh;
 width:100%;
 `
 
