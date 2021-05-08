@@ -49,8 +49,9 @@ const StyledImg = styled.img`
     float:left;
     width:40%;
     height:150px;
-    margin:auto;
     padding:none;
+    position:absolute; 
+    display:flex;
 `
 
 export default About;
