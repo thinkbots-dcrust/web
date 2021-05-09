@@ -6,11 +6,10 @@ export default function MainLogo() {
 }
 
 const StyledImg = styled.img`
-height:400px;
-width:400px;
-margin:auto;
-
+margin:0 auto;
+height:150px;
+width:150px;
 `
 const MainContainer = styled.div`
-text-align:center;
+
 `
