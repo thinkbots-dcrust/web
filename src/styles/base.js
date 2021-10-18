@@ -9,7 +9,7 @@ export const baseColor = {
 	onPrimaryLite: "#d6d6d6",
 	onPrimaryVeryLite: "#a1a1a1",
 	onSecondary: "#000000",
-	onBackground: "#000000",
+	onBackground: "#ffffff",
 	onBackgroundLite: "#555555",
 	onBackgroundVeryLite: "#333333",
 	onSurface: "#FFFFFF",
@@ -23,4 +23,8 @@ export const baseStyle = {
 	mainTextFont: "22px",
 	subTextFont: "16px",
 	smallTextFont: "12px",
+	btnPadding: "10px 15px",
+	leftMainMargin: "100px",
+	rightMainMargin: "100px",
+	btnBorderRadius: "10px",
 };
