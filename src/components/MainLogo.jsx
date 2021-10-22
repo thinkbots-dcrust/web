@@ -11,10 +11,9 @@ export default function MainLogo() {
 }
 
 const StyledImg = styled.img`
-	width: 230px;
-	margin: auto;
-	height: 280px;
-	margin-top: -15px;
+  width: 130px;
+  margin-top: -15px;
+  margin-bottom: 5px;
 `;
 
 const MainContainer = styled.div`
