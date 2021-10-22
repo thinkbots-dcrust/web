@@ -14,13 +14,12 @@ export default function App() {
 	return (
 		<Router>
 			<MainWrapper>
+                <NavBar />
 				<Switch>
-					<NavBar />
 					<Redirect exact from="/" to="/home" />
 					<Route exact path="/home">
 						<Homepage />
 					</Route>
-					<Route>404</Route>
 				</Switch>
 			</MainWrapper>
 		</Router>
