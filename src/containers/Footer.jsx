@@ -55,7 +55,7 @@ export default function Footer() {
 const Foot = styled.div`
   background-color: black;
   color: white;
-  width: 99%;
+  width: 100%;
   padding-top: 10px;
   text-align: center;
   position: absolute;
