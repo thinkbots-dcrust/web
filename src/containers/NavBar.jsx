@@ -36,12 +36,12 @@ function NavBtnComponent(props) {
 const MainWrapper = styled.div`
   position: fixed;
   top: 0;
-  width: 95%;
-  margin-left:20px;
+  left: 0;
+  width: 100%;
   z-index: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 64px;
   overflow: hidden;
@@ -65,7 +65,6 @@ const NavBtn = styled.button`
   text-decoration: none;
   letter-spacing: 2px;
   ${(props) => props.active && ` color:${baseColor.primary};`}
-
   &:hover {
     background-color: ${baseColor.primary};
     color: ${baseColor.onPrimary};
