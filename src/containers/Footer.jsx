@@ -10,47 +10,53 @@ import { ImLocation } from "react-icons/im";
 
 export default function Footer() {
   return (
-    <Foot>
-      <Contain>
-        <Col2>
-          <h1>Social</h1>
-          <ul>
-            <li>
-              Linked <BsLinkedin />
-            </li>
-            <li>
-              Instagram <BsInstagram />
-            </li>
-            <li>
-              Mail <SiGmail />
-            </li>
-          </ul>
-        </Col2>
-        <Col1>
-          <h1>Contact us</h1>
-          <ul>
-            <li>
-              <BsFillTelephoneForwardFill />
-              &nbsp; 9900887766
-            </li>
-            <li>
-              <BsFillTelephoneForwardFill />
-              &nbsp; 9900887766
-            </li>
-            <li>
-              <ImLocation />
-              &nbsp; 50th K.M.Stone, NH1, Murthal, Haryana 131039
-            </li>
-          </ul>
-        </Col1>
-      </Contain>
-      <Lines>
-        <p>All Rights Reserved | DCRUST 2021 </p>
-        <p>THINKBOTS TRADEMARK</p>
-      </Lines>
-    </Foot>
+    <MainWrapper>
+      <Foot>
+        <Contain>
+          <Col2>
+            <h1>Social</h1>
+            <ul>
+              <li>
+                Linked <BsLinkedin />
+              </li>
+              <li>
+                Instagram <BsInstagram />
+              </li>
+              <li>
+                Mail <SiGmail />
+              </li>
+            </ul>
+          </Col2>
+          <Col1>
+            <h1>Contact us</h1>
+            <ul>
+              <li>
+                <BsFillTelephoneForwardFill />
+                &nbsp; 9900887766
+              </li>
+              <li>
+                <BsFillTelephoneForwardFill />
+                &nbsp; 9900887766
+              </li>
+              <li>
+                <ImLocation />
+                &nbsp; 50th K.M.Stone, NH1, Murthal, Haryana 131039
+              </li>
+            </ul>
+          </Col1>
+        </Contain>
+        <Lines>
+          <p>All Rights Reserved | DCRUST 2021 </p>
+          <p>THINKBOTS TRADEMARK</p>
+        </Lines>
+      </Foot>
+    </MainWrapper>
   );
 }
+const MainWrapper = styled.section`
+padding-top: 20px;
+position: relative;
+`;
 
 const Foot = styled.div`
   background-color: black;

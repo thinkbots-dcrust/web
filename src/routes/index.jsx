@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 
-import { Homepage } from "pages";
+import { Homepage, Team, Faq } from "pages";
 import { NavBar, Footer } from "containers";
 
 export default function App() {
@@ -20,6 +20,13 @@ export default function App() {
           <Route exact path="/home">
             <Homepage />
           </Route>
+          <Route exact path="/team">
+            <Team />
+          </Route>
+          <Route exact path="/faqs">
+            <Faq />
+          </Route>
+          
         </Switch>
         <Footer />
       </MainWrapper>
@@ -28,6 +35,6 @@ export default function App() {
 }
 
 const MainWrapper = styled.div`
-  overflow-x: hidden;
-  height: 100vh;
+  height: 100%;
+  width:100%;
 `;
