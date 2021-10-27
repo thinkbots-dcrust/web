@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 
-import { Homepage, Team, Faq } from "pages";
+import { Homepage, Team, Faq, Page404} from "pages";
 import { NavBar, Footer } from "containers";
 
 export default function App() {
@@ -26,7 +26,9 @@ export default function App() {
           <Route exact path="/faqs">
             <Faq />
           </Route>
-          
+          <Route>
+            <Page404 />
+          </Route>
         </Switch>
         <Footer />
       </MainWrapper>
@@ -35,6 +37,5 @@ export default function App() {
 }
 
 const MainWrapper = styled.div`
-  height: 100%;
-  width:100%;
+
 `;
