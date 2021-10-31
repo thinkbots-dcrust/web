@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 
-import { Homepage, Team, Faq, Page404} from "pages";
+import { Homepage, Team, Faq, Page404, Login} from "pages";
 import { NavBar, Footer } from "containers";
 
 export default function App() {
@@ -25,6 +25,9 @@ export default function App() {
           </Route>
           <Route exact path="/faqs">
             <Faq />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route>
             <Page404 />

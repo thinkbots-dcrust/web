@@ -144,7 +144,7 @@ const Card = styled.div`
     height: 700px;
   }
   h1 {
-    font-size: 30px;
+    font-size: 20px;
     @media (max-width: 950px) {
       font-size: 20px;
     }
@@ -186,7 +186,7 @@ const Content = styled.div`
     height: 700px;
   }
   h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
   @media (max-width: 950px) {
     h1 {
