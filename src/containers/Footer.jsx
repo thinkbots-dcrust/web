@@ -4,10 +4,12 @@ import {
   BsLinkedin,
   BsInstagram,
   BsFillTelephoneForwardFill,
+  BsFillSuitHeartFill,
 } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiReact } from "react-icons/si";
 import { ImLocation } from "react-icons/im";
 import { baseColor } from "styles/base";
+import logo from "assets/logo.svg";
 
 export default function Footer() {
 	return (
@@ -26,7 +28,7 @@ export default function Footer() {
 						</li>
 						<li>
 							<SiGmail />
-							<LabelStyled>Main</LabelStyled>
+							<LabelStyled>Mail</LabelStyled>
 						</li>
 					</ul>
 				</Col2>
@@ -53,7 +55,7 @@ export default function Footer() {
 			</Contain>
 			<Lines>
 				<p>All Rights Reserved | DCRUST 2021 </p>
-				<p>THINKBOTS TRADEMARK</p>
+				<p> Built in <SiReact color='#3d9be9'/> with <BsFillSuitHeartFill color='red'/></p>
 			</Lines>
 		</Foot>
 	);

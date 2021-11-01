@@ -13,7 +13,7 @@ function Team() {
         <Card>
           <Content>
             <ImgBox>
-              <img src="/images/profile4.png" />
+              <img src="/images/profile4.png" alt='fuck server'/>
             </ImgBox>
             <ContentBox>
               <h2>
