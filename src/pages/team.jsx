@@ -257,7 +257,7 @@ const Card = styled.div`
     }
   }
   &:hover {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     li {
       transform: translateY(10px);
       opacity: 1;

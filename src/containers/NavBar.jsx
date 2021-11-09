@@ -3,33 +3,45 @@ import { MainLogo } from "components";
 import styled from "styled-components";
 import { baseColor, baseStyle } from "styles/base";
 import { Link, useLocation } from "react-router-dom";
-import "./NavBar.css";
 import { ReactComponent as Open } from "assets/menu-open.svg";
 import { ReactComponent as Close } from "assets/menu-close.svg";
 
 export default function NavBar() {
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
-    <MainWrapper className='header'>
+    <MainWrapper className="header">
       <MainLogo />
-      <NavButtonsWrapper className={click ? "nav-options active" : "nav-options"}>
-        <NavBtnComponent url="/home" label="HOME" className="option" onClick={closeMobileMenu}/><hr />
-        <NavBtnComponent url="/events" label="EVENTS" className="option" onClick={closeMobileMenu}/><hr />
-        <NavBtnComponent url="/projects" label="PROJECTS" className="option" onClick={closeMobileMenu}/><hr />
-        <NavBtnComponent url="/team" label="TEAM" className="option" onClick={closeMobileMenu}/><hr />
-        <NavBtnComponent url="/faqs" label="FAQs" className="option" onClick={closeMobileMenu}/><hr />
-        <NavBtnComponent url="/alumni" label="ALUMNI" className="option" onClick={closeMobileMenu}/><hr />
-        <NavBtnComponent url="/login" label="LOGIN" className="option" onClick={closeMobileMenu}/>
+      <NavButtonsWrapper active={click}>
+        <NavBtnComponent url="/home" label="HOME" onClick={closeMobileMenu} />
+        <hr />
+        <NavBtnComponent
+          url="/events"
+          label="EVENTS"
+          onClick={closeMobileMenu}
+        />
+        <hr />
+        <NavBtnComponent
+          url="/projects"
+          label="PROJECTS"
+          onClick={closeMobileMenu}
+        />
+        <hr />
+        <NavBtnComponent url="/team" label="TEAM" onClick={closeMobileMenu} />
+        <hr />
+        <NavBtnComponent url="/faqs" label="FAQs" onClick={closeMobileMenu} />
+        <hr />
+        <NavBtnComponent
+          url="/alumni"
+          label="ALUMNI"
+          onClick={closeMobileMenu}
+        />
+        <hr />
+        <NavBtnComponent url="/login" label="LOGIN" onClick={closeMobileMenu} />
       </NavButtonsWrapper>
-      <div className="mobile-menu" onClick={handleClick}>
-        {click ? (
-          <Close className="menu-icon" />
-        ) : (
-          <Open className="menu-icon" />
-        )}
-      </div>
+      <Crossbtn onClick={handleClick}>{click ? <Close /> : <Open />}</Crossbtn>
     </MainWrapper>
   );
 }
@@ -56,17 +68,47 @@ const MainWrapper = styled.div`
   /* justify-content: space-around; */
   height: 64px;
   overflow: hidden;
-  background-color: #131313;
+  background-color: ${baseColor.background};
+  justify-content: space-evenly;
+  align-items: center;
 `;
 const NavButtonsWrapper = styled.div`
-hr{
-    width:30%;
-    border:1px solid #3d9be9;
+  hr {
+    width: 30%;
+    border: 1px solid ${baseColor.primary};
     display: none;
-    @media (max-width: 1025px) {
-        
-    }
-}
+  }
+  @media (max-width: 1025px) {
+    align-items: center;
+    /* justify-content: space-between; */
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    top: 64px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.1s ease;
+    flex-direction: column;
+    list-style-type: none;
+    grid-gap: 0px;
+    ${(props) =>
+      props.active &&
+      `
+    color: ${baseColor.onPrimary};
+    background: ${baseColor.background};
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 10;
+    align-content: center;
+    padding: 0px;
+    border-radius: 0 0px 20px 0px;
+    border-bottom-style: solid;
+	  border-color: ${baseColor.primary};
+   `}
+  }
 `;
 
 const NavBtn = styled.button`
@@ -81,11 +123,18 @@ const NavBtn = styled.button`
   text-decoration: none;
   letter-spacing: 2px;
   ${(props) => props.active && ` color:${baseColor.primary};`}
-  a{
+  &:hover {
+    background-color: ${baseColor.primary};
+    color: ${baseColor.onPrimary};
+  }
+`;
 
-      &:hover {
-          background-color: ${baseColor.primary};
-          color: ${baseColor.onPrimary};
-        }
-    }
+const Crossbtn = styled.div`
+  display: none;
+  @media (max-width: 1025px) {
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: ${baseColor.primary};
+  }
 `;
