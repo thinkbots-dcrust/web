@@ -1,22 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { MainLogo } from "components";
 import styled from "styled-components";
 import { baseColor, baseStyle } from "styles/base";
 import { Link, useLocation } from "react-router-dom";
+import { ReactComponent as Open } from "assets/menu-open.svg";
+import { ReactComponent as Close } from "assets/menu-close.svg";
 
 export default function NavBar() {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
-    <MainWrapper>
+    <MainWrapper className="header">
       <MainLogo />
-      <NavButtonsWrapper>
-        <NavBtnComponent url="/home" label="HOME" />
-        <NavBtnComponent url="/events" label="EVENTS" />
-        <NavBtnComponent url="/projects" label="PROJECTS" />
-        <NavBtnComponent url="/team" label="TEAM" />
-        <NavBtnComponent url="/faqs" label="FAQs" />
-        <NavBtnComponent url="/alumni" label="ALUMNI" />
-        <NavBtnComponent url="/login" label="LOGIN" />
+      <NavButtonsWrapper active={click}>
+        <NavBtnComponent url="/home" label="HOME" onClick={closeMobileMenu} />
+        <hr />
+        <NavBtnComponent
+          url="/events"
+          label="EVENTS"
+          onClick={closeMobileMenu}
+        />
+        <hr />
+        <NavBtnComponent
+          url="/projects"
+          label="PROJECTS"
+          onClick={closeMobileMenu}
+        />
+        <hr />
+        <NavBtnComponent url="/team" label="TEAM" onClick={closeMobileMenu} />
+        <hr />
+        <NavBtnComponent url="/faqs" label="FAQs" onClick={closeMobileMenu} />
+        <hr />
+        <NavBtnComponent
+          url="/alumni"
+          label="ALUMNI"
+          onClick={closeMobileMenu}
+        />
+        <hr />
+        <NavBtnComponent url="/login" label="LOGIN" onClick={closeMobileMenu} />
       </NavButtonsWrapper>
+      <Crossbtn onClick={handleClick}>{click ? <Close /> : <Open />}</Crossbtn>
     </MainWrapper>
   );
 }
@@ -34,22 +59,55 @@ function NavBtnComponent(props) {
 
 //Styles
 const MainWrapper = styled.div`
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 5;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  /* justify-content: space-around; */
   height: 64px;
   overflow: hidden;
-  background-color: #131313;
+  background-color: ${baseColor.background};
+  justify-content: space-evenly;
+  align-items: center;
 `;
 const NavButtonsWrapper = styled.div`
-  @media (max-width: 760px) {
+  hr {
+    width: 30%;
+    border: 1px solid ${baseColor.primary};
     display: none;
+  }
+  @media (max-width: 1025px) {
+    align-items: center;
+    /* justify-content: space-between; */
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 310px;
+    position: absolute;
+    top: 64px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.1s ease;
+    flex-direction: column;
+    list-style-type: none;
+    grid-gap: 0px;
+    ${(props) =>
+      props.active &&
+      `
+    color: ${baseColor.onPrimary};
+    background: ${baseColor.background};
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 10;
+    align-content: center;
+    padding: 0px;
+    border-radius: 0 0px 20px 0px;
+    border-bottom-style: solid;
+	  border-color: ${baseColor.primary};
+   `}
   }
 `;
 
@@ -68,5 +126,15 @@ const NavBtn = styled.button`
   &:hover {
     background-color: ${baseColor.primary};
     color: ${baseColor.onPrimary};
+  }
+`;
+
+const Crossbtn = styled.div`
+  display: none;
+  @media (max-width: 1025px) {
+    display: block;
+    width: 40px;
+    height: 40px;
+    color: ${baseColor.primary};
   }
 `;

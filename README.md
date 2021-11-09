@@ -13,3 +13,7 @@ Install Node Modules
 Start Application
 
 > npm start
+
+For 'Icons' we are using React-icons
+
+> visit https://react-icons.github.io/react-icons/

@@ -2,7 +2,7 @@ export const baseColor = {
 	primary: "#3D9BE9",
 	primaryVariant: "#3700B3",
 	secondary: "#c2b0ef",
-	background: "#000000",
+	background: "#131313",
 	surface: "#232324",
 	error: "rgb(207, 102, 121)",
 	onPrimary: "#ffffff",
