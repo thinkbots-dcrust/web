@@ -8,11 +8,15 @@ on:
 
 jobs:
   build:
-
-    runs-on: self-hosted
-
+    name: Deploy-To-Dev-Server
+    runs-on: ubuntu-latest
+    
     steps:
-    - uses: actions/checkout@v2
- 
-    - run: npm i
-    - run: npm run build 
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: cd /home/dev/thinkbots && docker-compose up -d --build
