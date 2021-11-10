@@ -82,6 +82,7 @@ function Faq() {
 
 const MainWrapper = styled.section`
   position: relative;
+  padding-bottom: 30px;
 `;
 
 const Title = styled.div`
