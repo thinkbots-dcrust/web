@@ -5,72 +5,80 @@ import { baseColor, baseStyle } from "styles/base";
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as Open } from "assets/menu-open.svg";
 import { ReactComponent as Close } from "assets/menu-close.svg";
+import { getDeviceType } from "helpers";
 
 export default function NavBar() {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+	const [click, setClick] = useState(false);
+	const handleClick = () => setClick(!click);
+	const closeMobileMenu = () => setClick(false);
 
-  return (
-    <MainWrapper className="header">
-      <MainLogo />
-      <NavButtonsWrapper active={click}>
-        <NavBtnComponent url="/home" label="HOME" onClick={closeMobileMenu} />
-        <hr />
-        <NavBtnComponent
-          url="/events"
-          label="EVENTS"
-          onClick={closeMobileMenu}
-        />
-        <hr />
-        <NavBtnComponent
-          url="/projects"
-          label="PROJECTS"
-          onClick={closeMobileMenu}
-        />
-        <hr />
-        <NavBtnComponent url="/team" label="TEAM" onClick={closeMobileMenu} />
-        <hr />
-        <NavBtnComponent url="/faqs" label="FAQs" onClick={closeMobileMenu} />
-        <hr />
-        <NavBtnComponent
-          url="/alumni"
-          label="ALUMNI"
-          onClick={closeMobileMenu}
-        />
-        <hr />
-        <NavBtnComponent url="/login" label="LOGIN" onClick={closeMobileMenu} />
-      </NavButtonsWrapper>
-      <Crossbtn onClick={handleClick}>{click ? <Close /> : <Open />}</Crossbtn>
-    </MainWrapper>
-  );
+	return (
+		<MainWrapper className="header">
+			<MainLogo />
+			<NavButtonsWrapper active={click}>
+				<NavBtnComponent url="/home" label="HOME" onClick={closeMobileMenu} />
+				<hr />
+				<NavBtnComponent
+					url="/events"
+					label="EVENTS"
+					onClick={closeMobileMenu}
+				/>
+				<hr />
+				<NavBtnComponent
+					url="/projects"
+					label="PROJECTS"
+					onClick={closeMobileMenu}
+				/>
+				<hr />
+				<NavBtnComponent url="/team" label="TEAM" onClick={closeMobileMenu} />
+				<hr />
+				<NavBtnComponent url="/faqs" label="FAQs" onClick={closeMobileMenu} />
+				<hr />
+				<NavBtnComponent
+					url="/alumni"
+					label="ALUMNI"
+					onClick={closeMobileMenu}
+				/>
+				<hr />
+				<NavBtnComponent url="/login" label="LOGIN" onClick={closeMobileMenu} />
+			</NavButtonsWrapper>
+			<Crossbtn onClick={handleClick}>{click ? <Close /> : <Open />}</Crossbtn>
+		</MainWrapper>
+	);
 }
 
 //components
 
 function NavBtnComponent(props) {
-  const location = useLocation();
-  return (
-    <Link to={props.url}>
-      <NavBtn active={location.pathname === props.url}>{props.label}</NavBtn>
-    </Link>
-  );
+	const location = useLocation();
+	return (
+		<Link to={props.url}>
+			<NavBtn onClick={props.onClick} active={location.pathname === props.url}>
+				{props.label}
+			</NavBtn>
+		</Link>
+	);
 }
 
 //Styles
 const MainWrapper = styled.div`
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 5;
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-around; */
-  height: 64px;
-  overflow: hidden;
-  background-color: ${baseColor.background};
-  justify-content: space-evenly;
-  align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-around; */
+	height: 64px;
+	overflow: hidden;
+	background-color: ${baseColor.background};
+	justify-content: space-evenly;
+	align-items: center;
+	box-sizing: border-box;
+	${getDeviceType() === "mobile" &&
+	`justify-content:space-between;
+    padding:0 ${baseStyle.leftMainMargin};
+  `}
 `;
 const NavButtonsWrapper = styled.div`
   hr {

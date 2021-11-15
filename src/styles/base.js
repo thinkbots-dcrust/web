@@ -1,3 +1,5 @@
+import { getDeviceType } from "helpers";
+
 export const baseColor = {
   primary: "#3D9BE9",
   primaryVariant: "#3700B3",
@@ -18,14 +20,29 @@ export const baseColor = {
   lightOnBackground: "#999999",
 };
 
-export const baseStyle = {
-  mainHeadingFont: "38px",
-  subHeadingFont: "26px",
-  mainTextFont: "18px",
-  subTextFont: "16px",
-  smallTextFont: "12px",
-  btnPadding: "8px 20px",
-  leftMainMargin: "100px",
-  rightMainMargin: "100px",
-  btnBorderRadius: "20px",
-};
+export const baseStyle =
+	getDeviceType() === "mobile"
+		? {
+				mainHeadingFont: "38px",
+				subHeadingFont: "26px",
+				mainTextFont: "18px",
+				subTextFont: "16px",
+				smallTextFont: "12px",
+				btnPadding: "8px 20px",
+				leftMainMargin: "10px",
+				rightMainMargin: "10px",
+				btnBorderRadius: "20px",
+				boxShadowMild: "10px 10px 10px rgba(0, 0, 0, 0.2)",
+		  }
+		: {
+				mainHeadingFont: "38px",
+				subHeadingFont: "26px",
+				mainTextFont: "18px",
+				subTextFont: "16px",
+				smallTextFont: "12px",
+				btnPadding: "8px 20px",
+				leftMainMargin: "100px",
+				rightMainMargin: "100px",
+				btnBorderRadius: "20px",
+				boxShadowMild: "10px 10px 10px rgba(0, 0, 0, 0.2)",
+		  };
