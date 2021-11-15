@@ -10,7 +10,7 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import gsap from "gsap";
 
-export default function Model({ setShow }) {
+export default function Model() {
   const group = useRef();
   const { nodes, materials } = useGLTF("/models/drone/scene.gltf");
 
@@ -52,7 +52,6 @@ export default function Model({ setShow }) {
       { y: -Math.PI / 4 },
       { y: Math.PI / 4, duration: 1 }
     );
-    setShow(true);
   };
 
   useEffect(() => {
