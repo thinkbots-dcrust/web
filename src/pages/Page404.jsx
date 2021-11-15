@@ -13,6 +13,7 @@ export default function Page404() {
 const ImageStyled = styled.img`
 	margin: 10px auto;
 	height: 100%;
+	width: 100%;
 `;
 const MainWrapper = styled.div`
 	height: 80vh;
