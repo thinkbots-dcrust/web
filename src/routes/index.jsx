@@ -12,34 +12,37 @@ import { NavBar, Footer } from "containers";
 
 export default function App() {
 	return (
-		<Router>
-			<MainWrapper>
-				<NavBar />
-				<Switch>
-					<Redirect exact from="/" to="/home" />
-					<Route exact path="/home">
-						<Homepage />
-					</Route>
-					<Route exact path="/team">
-						<Team />
-					</Route>
-					<Route exact path="/faqs">
-						<Faq />
-					</Route>
-					<Route exact path="/login">
-						<Login />
-					</Route>
-					<Route exact path="/events">
-						<Events />
-					</Route>
-					<Route>
-						<Page404 />
-					</Route>
-				</Switch>
-				<Footer />
-			</MainWrapper>
-		</Router>
-	);
+    <Router>
+      <MainWrapper>
+        <NavBar />
+        <Switch>
+          <Redirect exact from="/" to="/home" />
+          <Route exact path="/home">
+            <Homepage />
+          </Route>
+          <Route exact path="/team">
+            <Team />
+          </Route>
+          <Route exact path="/faqs">
+            <Faq />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/events">
+            <Events />
+          </Route>
+          <Route exact path="/alumni">
+            <Alumni />
+          </Route>
+          <Route>
+            <Page404 />
+          </Route>
+        </Switch>
+        <Footer />
+      </MainWrapper>
+    </Router>
+  );
 }
 
 const MainWrapper = styled.div`
