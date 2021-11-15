@@ -19,27 +19,40 @@ export default function Model({ setShow }) {
   };
 
   const start = async () => {
-    gsap.to(group.current.position, { y: 0, duration: 2 });
-    gsap.to(group.current.position, { x: 0, duration: 2 });
-    await delay(700);
-    gsap.to(group.current.rotation, { y: Math.PI, duration: 0.45 });
-    await delay(700);
-    gsap.to(group.current.rotation, { y: 0, duration: 0.45 });
-    await delay(700);
-    gsap.to(group.current.rotation, { y: Math.PI / 4, duration: 0.45 });
-    await delay(700);
-    hover();
-    setShow(true);
-  };
-  const hover = async () => {
-    gsap.to(group.current.position, { y: 0.1, duration: 2 });
-    gsap.to(group.current.rotation, { x: 0.05, duration: 2 });
-    await delay(1000);
-    gsap.to(group.current.position, { y: -0.1, duration: 2 });
-    gsap.to(group.current.rotation, { x: -0.05, duration: 2 });
+    gsap.fromTo(
+      group.current.position,
+      { y: group.current.position.y },
+      { y: 3, duration: 1.5 }
+    );
+    gsap.fromTo(
+      group.current.position,
+      { x: group.current.position.x },
+      { x: 0, duration: 1.5 }
+    );
 
-    await delay(1000);
-    hover();
+    gsap.to(group.current.rotation, { y: Math.PI / 4, duration: 1.5 });
+
+    const hover = gsap.timeline({ repeat: -1 });
+    hover.fromTo(group.current.position, { y: 2.9 }, { y: 3.1, duration: 1.5 });
+    hover.fromTo(group.current.position, { y: 3.1 }, { y: 2.9, duration: 1.5 });
+
+    const lookAround = gsap.timeline({ repeat: -1, repeatDelay: 5, delay: 5 });
+    lookAround.fromTo(
+      group.current.rotation,
+      { y: Math.PI / 4 },
+      { y: Math.PI / 2, duration: 1 }
+    );
+    lookAround.fromTo(
+      group.current.rotation,
+      { y: Math.PI / 2 },
+      { y: -Math.PI / 4, duration: 1 }
+    );
+    lookAround.fromTo(
+      group.current.rotation,
+      { y: -Math.PI / 4 },
+      { y: Math.PI / 4, duration: 1 }
+    );
+    setShow(true);
   };
 
   useEffect(() => {
