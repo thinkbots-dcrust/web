@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import styled from "styled-components";
 import { baseColor } from "styles/base";
 import Drone from "components/Drone";
-import Hologram from "components/Hologram";
+import { Stars } from "@react-three/drei";
 
 function Homepage() {
   const [show, setShow] = useState(false);
@@ -11,13 +11,20 @@ function Homepage() {
   return (
     <>
       <Canvas
-        style={{ height: "92vh", width: "100%" }}
-        camera={{ fov: 45, near: 0.1, far: 1000, position: [7, 0, 7] }}
+        style={{ height: "90vh", width: "100%" }}
+        camera={{ fov: 60, near: 0.1, far: 1000, position: [7, 0, 7] }}
       >
         <Suspense fallback={null}>
           <Drone setShow={setShow} />
+          <Stars
+            radius={70}
+            depth={20}
+            count={5000}
+            factor={4}
+            saturation={0}
+            fade
+          />
           <pointLight args={[0xffffff, 1, 100]} position={[5, 5, 5]} />
-          {show && <Hologram />}
         </Suspense>
       </Canvas>
       {show && (
@@ -43,12 +50,12 @@ function Homepage() {
 
 const MainWrapper = styled.section`
   color: ${baseColor.onBackground};
-  margin: 20px auto;
   left: 0;
   right: 0;
   width: 80%;
   top: 0;
-  padding: 25vh 0;
+  margin: auto;
+  margin-top: 30vh;
   position: absolute;
 `;
 const Para = styled.p`
@@ -68,6 +75,6 @@ const Title = styled.div`
 `;
 
 const Plate = styled.div`
-  padding: 30px;
+  padding-top: 30px;
 `;
 export default Homepage;
