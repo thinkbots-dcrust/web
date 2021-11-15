@@ -9,8 +9,7 @@ import {
 import { SiGmail, SiReact } from "react-icons/si";
 import { ImLocation } from "react-icons/im";
 import { baseColor } from "styles/base";
-import logo from "assets/logo.svg";
-
+import Logo from "assets/thinkbots_main_logo.svg";
 export default function Footer() {
 	return (
 		<Foot>
@@ -55,7 +54,7 @@ export default function Footer() {
 			</Contain>
 			<Lines>
 				<p>All Rights Reserved | DCRUST 2021 </p>
-				<p> Built in <SiReact color='#3d9be9'/> with <BsFillSuitHeartFill color='red'/></p>
+				<p> Built by <StyledImg src={Logo} /> with <BsFillSuitHeartFill color='red'/></p>
 			</Lines>
 		</Foot>
 	);
@@ -64,7 +63,13 @@ const MainWrapper = styled.section`
 padding-top: 20px;
 position: relative;
 `;
-
+const StyledImg = styled.img`
+  width: 50px;
+  margin:0;
+  margin-top: -25px;
+  vertical-align: -20px;
+  padding:0;
+`;
 const LabelStyled = styled.span`
 	margin-left: 8px;
 	transform: translateY(-2px);
@@ -236,7 +241,10 @@ const Lines = styled.div`
   @media only screen and (max-width: 340px) {
     font-size: 10px;
   }
-  p{
-      padding-bottom:5px ;
+  p {
+    padding-bottom: 5px;
+    svg {
+      vertical-align: -10%;
+    }
   }
 `;
