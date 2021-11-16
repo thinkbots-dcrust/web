@@ -1,57 +1,175 @@
 import React from "react";
 import styled from "styled-components";
-import { baseColor } from "styles/base";
 import { BsLinkedin, BsInstagram } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
+import { baseColor, baseStyle } from "styles/base";
+import { Parallax } from "react-parallax";
+import { CgMouse, CgPen } from "react-icons/cg";
+import { getDeviceType } from "helpers";
 
 function Alumni() {
   return (
     <AlumniContainer>
-      <Header>
-        <SocialLink>
-          <h1>Alumni netwrok</h1>
-          <p>
-            Alumni serve many valuable roles, such as helping to build and grow
-            an institution's brand through word-of-mouth marketing. For
-            instance, positive posts on social media can create buzz and
-            increase application rates. Colleges also rely on alumni to provide
-            mentoring, internships, and career opportunities to students
-          </p>
-          <ul>
-            <li>
-              <a>
-                <BsInstagram color="#833AB4" />
-              </a>
-            </li>
-            <li>
-              <a>
-                <BsLinkedin color="blue" />
-              </a>
-            </li>
-            <li>
-              <a>
-                <SiGmail color="red" />
-              </a>
-            </li>
-          </ul>
-        </SocialLink>
-        <BgImage>
-          <img src={"images/sol2.jpg"} alt="" />
-        </BgImage>
-      </Header>
+      <Parallax
+        bgImage={"images/alumni3.jpg"}
+        strength={200}
+        blur={{ min: -10, max: 10 }}
+        disabled={false}
+      >
+        <Fuck>
+          <Fuckicon>
+            <CgMouse />
+          </Fuckicon>
+        </Fuck>
+      </Parallax>
 
-      <Imgbar>
+      <AlumniSec>
         <h1>Our Gems</h1>
-        <Imgsm>
-          <img src="/images/profile4.png" />
-        </Imgsm>
-        <Imgsm>
-          <img src="/images/profile4.png" />
-        </Imgsm>
-        <Imgsm>
-          <img src="/images/profile4.png" />
-        </Imgsm>
-      </Imgbar>
+
+        <AlumniBar>
+          <AlumniSocial>
+            <ul>
+              <li>
+                <a>
+                  <BsInstagram />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <BsLinkedin />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <SiGmail />
+                </a>
+              </li>
+            </ul>
+          </AlumniSocial>
+          <AlumniImg>
+            <img src="/images/profile3.jpg" />
+          </AlumniImg>
+          <AlumniData>
+            <h2>Siddharth</h2>
+            <p>Web Devloper</p>
+          </AlumniData>
+        </AlumniBar>
+
+        <AlumniBar>
+          <AlumniSocial>
+            <ul>
+              <li>
+                <a>
+                  <BsInstagram />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <BsLinkedin />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <SiGmail />
+                </a>
+              </li>
+            </ul>
+          </AlumniSocial>
+          <AlumniImg>
+            <img src="/images/profile4.png" />
+          </AlumniImg>
+          <AlumniData>
+            <h2>Alumni Name</h2>
+            <p>Alumni Designation</p>
+          </AlumniData>
+        </AlumniBar>
+
+        <AlumniBar>
+          <AlumniSocial>
+            <ul>
+              <li>
+                <a>
+                  <BsInstagram />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <BsLinkedin />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <SiGmail />
+                </a>
+              </li>
+            </ul>
+          </AlumniSocial>
+          <AlumniImg>
+            <img src="/images/profile4.png" />
+          </AlumniImg>
+          <AlumniData>
+            <h2>Alumni Name</h2>
+            <p>Alumni Designation</p>
+          </AlumniData>
+        </AlumniBar>
+
+        <AlumniBar>
+          <AlumniSocial>
+            <ul>
+              <li>
+                <a>
+                  <BsInstagram />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <BsLinkedin />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <SiGmail />
+                </a>
+              </li>
+            </ul>
+          </AlumniSocial>
+          <AlumniImg>
+            <img src="/images/profile4.png" />
+          </AlumniImg>
+          <AlumniData>
+            <h2>Alumni Name</h2>
+            <p>Alumni Designation</p>
+          </AlumniData>
+        </AlumniBar>
+        <AlumniBar>
+          <AlumniSocial>
+            <ul>
+              <li>
+                <a>
+                  <BsInstagram />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <BsLinkedin />
+                </a>
+              </li>
+              <li>
+                <a>
+                  <SiGmail />
+                </a>
+              </li>
+            </ul>
+          </AlumniSocial>
+          <AlumniImg>
+            <img src="/images/profile4.png" />
+          </AlumniImg>
+          <AlumniData>
+            <h2>Alumni Name</h2>
+            <p>Alumni Designation</p>
+          </AlumniData>
+        </AlumniBar>
+      </AlumniSec>
 
       <TheBody>
         <Topics>
@@ -88,19 +206,6 @@ function Alumni() {
           <img src="/images/msging1.jpg" />
         </Theme>
       </TheBody>
-      <Companies>
-        <Main>
-          <Imgsm>
-            <img src="/images/profile4.png" />
-          </Imgsm>
-          <Imgsm>
-            <img src="/images/profile4.png" />
-          </Imgsm>
-          <Imgsm>
-            <img src="/images/profile4.png" />
-          </Imgsm>
-        </Main>
-      </Companies>
     </AlumniContainer>
   );
 }
@@ -111,103 +216,145 @@ export default Alumni;
 
 const AlumniContainer = styled.div``;
 
-const Header = styled.section`
+const Fuck = styled.div`
+  height: 100vh;
+`;
+
+const Fuckicon = styled.div`
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: "translate(-50%, -50%)";
+`;
+
+const AlumniSec = styled.section`
   margin: 20px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.05);
-  color: #3d9be9;
+  background-color: ${baseColor.surface};
+  overflow: hidden;
+  box-shadow: ${baseStyle.boxShadowMild};
+  color: ${baseColor.onBackground};
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-const BgImage = styled.div`
-  padding: 10px;
-  width: 600px;
-  display: block;
-  @media (max-width: 870px) {
-    display: none;
-  }
-  img {
-    border-radius: 20px;
-    width: 100%;
-    height: auto;
-  }
-`;
-const SocialLink = styled.div`
-  max-width: 500px;
-  margin: 10px;
-  position: relative;
-  padding-bottom: 50px;
-
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   h1 {
-    text-align: center;
+    padding-top: 100px;
     margin: 10px;
+    width: 500px;
+    height: 100px;
+    text-align: center;
+    margin: 30px 40px;
+    vertical-align: sub;
+  }
+  ${getDeviceType() === "mobile" &&
+  `
+		margin: 10px;
+	`}
+`;
+
+const AlumniBar = styled.div`
+  position: relative;
+  background-color: ${baseColor.surface};
+  height: 200px;
+  width: 500px;
+  margin: 30px 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: ${baseStyle.boxShadowMild};
+  color: ${baseColor.onBackground};
+  display: flex;
+  opacity: 1;
+
+  ${getDeviceType() === "mobile" &&
+  `
+		font-size:${baseStyle.mainTextFont};
+		width:500px;
+        margin: 20px 10px;
+        height: 150px;
+	`}
+`;
+const AlumniSocial = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.2s ease;
+  background-color: transparent;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-top: 100px;
+    ${getDeviceType() === "mobile" &&
+    `
+		margin-top: 75px;
+        margin-left: 20px;
+	`}
+  }
+  li {
+    color: white;
+    font-size: 25px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  ${AlumniBar}:hover & {
+    opacity: 1;
+    background-color: rgba(35, 35, 36, 0.95);
+  }
+`;
+
+const AlumniImg = styled.div`
+  img {
+    padding: 10px;
+    border-radius: 200px;
+    height: 180px;
+    width: 180px;
+  }
+  ${getDeviceType() === "mobile" &&
+  `
+	img {
+    height: 130px;
+    width: 130px;
+  }
+	`}
+`;
+
+const AlumniData = styled.div`
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  p {
+    padding-top: 10px;
+  }
+  ${getDeviceType() === "mobile" &&
+  `
+    width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  h2{
+      font-size:${baseStyle.subTextFont};
+      padding-top: 20px;
   }
   p {
-    color: #999999;
-    font-size: 16px;
+    font-size: ${baseStyle.smallTextFont};
   }
-  ul {
-    position: absolute;
-    bottom: 50px;
-    display: flex;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    li {
-      list-style: none;
-      margin: 0 10px;
-      opacity: 1;
-      a {
-        color: white;
-        font-size: 20px;
-      }
-    }
-  }
-`;
-const Imgbar = styled.section`
-  margin: 0px;
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #3d9be9;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  h1 {
-    margin: 10px;
-  }
-`;
-const Imgsm = styled.div`
-  margin: 10px;
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 10px solid rgba(0, 0, 0, 0.25);
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  @media (max-width: 500px) {
-    width: 50px;
-    height: 50px;
-    border: 0px solid rgba(0, 0, 0, 0.25);
-  }
+	`}
 `;
 
 const TheBody = styled.section`
   position: relative;
   margin: 20px;
   border-radius: 20px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.05);
   color: #3d9be9;
   height: 100%;
   display: flex;
@@ -231,7 +378,6 @@ const Topics = styled.section`
     color: black;
     @media (max-width: 870px) {
       font-size: 16px;
-      
     }
   }
 `;
@@ -254,23 +400,4 @@ const Theme = styled.section`
       opacity: 0.6;
     }
   }
-`;
-const Companies = styled.section`
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 0px;
-  background: white;
-  color: #3d9be9;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-`;
-const Main = styled.div`
-  margin: 10px;
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #3d9be9;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 `;
