@@ -4,7 +4,7 @@ import { BsLinkedin, BsInstagram } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 import { baseColor, baseStyle } from "styles/base";
 import { Parallax } from "react-parallax";
-import { CgMouse, CgPen } from "react-icons/cg";
+import { CgMouse } from "react-icons/cg";
 import { getDeviceType } from "helpers";
 
 function Alumni() {
@@ -14,7 +14,12 @@ function Alumni() {
         bgImage={"images/alumni3.jpg"}
         strength={200}
         blur={{ min: -10, max: 10 }}
-        disabled={false}
+        disabled={
+          getDeviceType() === "mobile" &&
+          `
+		true
+	`
+        }
       >
         <Fuck>
           <Fuckicon>
@@ -171,41 +176,14 @@ function Alumni() {
         </AlumniBar>
       </AlumniSec>
 
-      <TheBody>
-        <Topics>
-          <h1>Hot Discussions</h1>
-          <h2>
-            #1.&nbsp; <span></span>&nbsp; How might I check the situation with
-            my request?
-          </h2>
-          <h2>
-            #1.&nbsp; <span></span>&nbsp; How might I check the situation with
-            my request?
-          </h2>
-          <h2>
-            #1.&nbsp; <span></span>&nbsp; How might I check the situation with
-            my request?
-          </h2>
-          <h2>
-            #1.&nbsp; <span></span>&nbsp; How might I check the situation with
-            my request?
-          </h2>
-          <h2>
-            #1.&nbsp; <span></span>&nbsp; How might I check the situation with
-            my request?
-          </h2>
-          <h2>
-            #1.&nbsp; <span></span>&nbsp; How might I check the situation with
-            my request?
-          </h2>
+        <TheBody>
+            <BodyHeading>
+                <h1>Companies prefer Us</h1>
+            </BodyHeading>
+            <BodyImg>
 
-          <h1>Ask Question</h1>
-          <textarea name="Query?" id="" cols="20" rows="1"></textarea>
-        </Topics>
-        <Theme>
-          <img src="/images/msging1.jpg" />
-        </Theme>
-      </TheBody>
+            </BodyImg>
+        </TheBody>
     </AlumniContainer>
   );
 }
@@ -314,16 +292,16 @@ const AlumniSocial = styled.div`
 
 const AlumniImg = styled.div`
   img {
-    padding: 10px;
-    border-radius: 200px;
-    height: 180px;
-    width: 180px;
+    padding: 0px;
+    border-radius: 40px 0px 0px 40px;
+    height: 200px;
+    width: 200px;
   }
   ${getDeviceType() === "mobile" &&
   `
 	img {
-    height: 130px;
-    width: 130px;
+    height: 150px;
+    width: 150px;
   }
 	`}
 `;
@@ -351,53 +329,24 @@ const AlumniData = styled.div`
 `;
 
 const TheBody = styled.section`
-  position: relative;
-  margin: 20px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #3d9be9;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-`;
-const Topics = styled.section`
-  z-index: 2;
-  margin: 20px;
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  h1 {
-    font-size: 30px;
-    @media (max-width: 870px) {
-      font-size: 25px;
-    }
-  }
-  h2 {
-    font-size: 20px;
-    color: black;
-    @media (max-width: 870px) {
-      font-size: 16px;
-    }
-  }
+  height: 30vh;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  ${getDeviceType() === "mobile" &&
+  `
+    height: 90vh;
+	`}
 `;
 
-const Theme = styled.section`
-  padding: 10px;
-  position: relative;
-  width: 600px;
-  @media (max-width: 1200px) {
-    width: 500px;
-  }
-  @media (max-width: 1000px) {
-    width: 100%;
-  }
-  img {
-    border-radius: 20px;
-    width: 100%;
-    height: auto;
-    @media (max-width: 1000px) {
-      opacity: 0.6;
-    }
-  }
+const BodyHeading = styled.div`
+text-align: center;
+padding-top: 50px;
+h1{
+
+    color: white;
+    font-size: ${baseStyle.mainTextFont};
+    font-weight: 100;
+    font-family: 'monospace', sans-serif;
+}
 `;
+const BodyImg = styled.div``;
