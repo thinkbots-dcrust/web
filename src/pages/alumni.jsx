@@ -52,7 +52,7 @@ function Alumni() {
             </ul>
           </AlumniSocial>
           <AlumniImg>
-            <img src="/images/profile3.jpg" />
+            <img src="/images/profile3.jpg" alt="img-error" />
           </AlumniImg>
           <AlumniData>
             <h2>Siddharth</h2>
@@ -81,7 +81,7 @@ function Alumni() {
             </ul>
           </AlumniSocial>
           <AlumniImg>
-            <img src="/images/profile4.png" />
+            <img src="/images/profile4.png" alt="img-error" />
           </AlumniImg>
           <AlumniData>
             <h2>Alumni Name</h2>
@@ -110,7 +110,7 @@ function Alumni() {
             </ul>
           </AlumniSocial>
           <AlumniImg>
-            <img src="/images/profile4.png" />
+            <img src="/images/profile4.png" alt="img-error" />
           </AlumniImg>
           <AlumniData>
             <h2>Alumni Name</h2>
@@ -139,7 +139,7 @@ function Alumni() {
             </ul>
           </AlumniSocial>
           <AlumniImg>
-            <img src="/images/profile4.png" />
+            <img src="/images/profile4.png" alt="img-error" />
           </AlumniImg>
           <AlumniData>
             <h2>Alumni Name</h2>
@@ -167,7 +167,7 @@ function Alumni() {
             </ul>
           </AlumniSocial>
           <AlumniImg>
-            <img src="/images/profile4.png" />
+            <img src="/images/profile4.png" alt="img-error" />
           </AlumniImg>
           <AlumniData>
             <h2>Alumni Name</h2>
@@ -176,14 +176,12 @@ function Alumni() {
         </AlumniBar>
       </AlumniSec>
 
-        <TheBody>
-            <BodyHeading>
-                <h1>Companies prefer Us</h1>
-            </BodyHeading>
-            <BodyImg>
-
-            </BodyImg>
-        </TheBody>
+      <TheBody>
+        <BodyHeading>
+          <h1>Companies prefer Us</h1>
+        </BodyHeading>
+        <BodyImg></BodyImg>
+      </TheBody>
     </AlumniContainer>
   );
 }

@@ -1,7 +1,5 @@
 import Logo from "assets/thinkbots_main_logo.svg";
 import styled from "styled-components";
-import { baseStyle } from "styles/base";
-
 export default function MainLogo() {
   return (
     <MainContainer>

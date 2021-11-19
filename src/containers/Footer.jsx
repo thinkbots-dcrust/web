@@ -6,7 +6,7 @@ import {
   BsFillTelephoneForwardFill,
   BsFillSuitHeartFill,
 } from "react-icons/bs";
-import { SiGmail, SiReact } from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 import { ImLocation } from "react-icons/im";
 import { baseColor } from "styles/base";
 import Logo from "assets/thinkbots_main_logo.svg";
@@ -59,10 +59,7 @@ export default function Footer() {
 		</Foot>
 	);
 }
-const MainWrapper = styled.section`
-padding-top: 20px;
-position: relative;
-`;
+
 const StyledImg = styled.img`
   width: 50px;
   margin:0;
