@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 
-
 import { Homepage, Team, Faq, Page404, Login, Events, Alumni } from "pages";
 import { NavBar, Footer } from "containers";
 import { Suspense } from "react";
