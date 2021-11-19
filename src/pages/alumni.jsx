@@ -1,11 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 import { BsLinkedin, BsInstagram } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
+import {
+  SiGmail,
+  SiReact,
+  SiMcdonalds,
+  SiFacebook,
+  SiGoogle,
+  SiMicrosoft,
+  SiGithub,
+  SiGitlab,
+  SiTesla,
+  SiTwitch,
+  SiStarbucks,
+  SiPorsche,
+  SiApple,
+  SiEpicgames,
+  SiSteam,
+} from "react-icons/si";
 import { baseColor, baseStyle } from "styles/base";
 import { Parallax } from "react-parallax";
 import { CgMouse } from "react-icons/cg";
 import { getDeviceType } from "helpers";
+
+import JedliSlider, { JedliSlide } from "react-jedlislider";
+import "react-jedlislider/dist/index.css";
 
 function Alumni() {
   return (
@@ -176,11 +195,103 @@ function Alumni() {
         </AlumniBar>
       </AlumniSec>
 
+      <EndingTag>
+        <img src="/images/paid/ending2.png" alt="img-error" />
+      </EndingTag>
+
       <TheBody>
         <BodyHeading>
           <h1>Companies prefer Us</h1>
         </BodyHeading>
-        <BodyImg></BodyImg>
+
+        <BodyImg>
+          <JedliSlider
+            speed={30}
+            slidesWidth="equal"
+            visibleSlides="auto"
+            direction="rtl"
+            pauseOnHover={false}
+            style={{ color: "white", padding: "10px" }}
+          >
+            <JedliSlide>
+              <SiReact
+                onMouseOver={({ target }) => (target.style.color = "#61DBFB")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiFacebook
+                onMouseOver={({ target }) => (target.style.color = "#4267B2")}
+              />
+            </JedliSlide>
+
+            <JedliSlide>
+              <SiMicrosoft
+                onMouseOver={({ target }) => (target.style.color = "#00A4EF")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiSteam
+                onMouseOver={({ target }) => (target.style.color = "#c1c1c1")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiGithub
+                onMouseOver={({ target }) => (target.style.color = "#6e5494")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiEpicgames
+                onMouseOver={({ target }) => (target.style.color = "#A2AAAD")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiMcdonalds
+                onMouseOver={({ target }) => (target.style.color = "#FFC72C")}
+              />
+            </JedliSlide>
+
+            <JedliSlide>
+              <SiTesla
+                onMouseOver={({ target }) => (target.style.color = "#cc0000")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiTwitch
+                onMouseOver={({ target }) => (target.style.color = "#6441a5")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiStarbucks
+                onMouseOver={({ target }) => (target.style.color = "#00704A")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiPorsche
+                onMouseOver={({ target }) => (target.style.color = "yellow")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiApple
+                onMouseOver={({ target }) => (target.style.color = "#A2AAAD")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiSteam
+                onMouseOver={({ target }) => (target.style.color = "#c1c1c1")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiGoogle
+                onMouseOver={({ target }) => (target.style.color = "white")}
+              />
+            </JedliSlide>
+            <JedliSlide>
+              <SiGitlab
+                onMouseOver={({ target }) => (target.style.color = "cyan")}
+              />
+            </JedliSlide>
+          </JedliSlider>
+        </BodyImg>
       </TheBody>
     </AlumniContainer>
   );
@@ -292,14 +403,15 @@ const AlumniImg = styled.div`
   img {
     padding: 0px;
     border-radius: 40px 0px 0px 40px;
-    height: 200px;
-    width: 200px;
+    border: 2px solid rgba(35, 35, 36, 0.95);
+    height: 196px;
+    width: 196px;
   }
   ${getDeviceType() === "mobile" &&
   `
 	img {
-    height: 150px;
-    width: 150px;
+    height: 148px;
+    width: 148px;
   }
 	`}
 `;
@@ -330,21 +442,53 @@ const TheBody = styled.section`
   height: 30vh;
   margin-top: 10px;
   margin-bottom: 20px;
-  ${getDeviceType() === "mobile" &&
-  `
-    height: 90vh;
-	`}
 `;
 
 const BodyHeading = styled.div`
-text-align: center;
-padding-top: 50px;
-h1{
-
-    color: white;
-    font-size: ${baseStyle.mainTextFont};
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  h1 {
+    color: #c1c1c1;
+    font-size: ${baseStyle.mainHeadingFont};
     font-weight: 100;
-    font-family: 'monospace', sans-serif;
-}
+    letter-spacing: 5px;
+    ${getDeviceType() === "mobile" &&
+    `font-size: ${baseStyle.subHeadingFont};
+    letter-spacing: 0px;
+	`}
+  }
 `;
-const BodyImg = styled.div``;
+const BodyImg = styled.div`
+  margin-top: 20px;
+  border-radius: 20px;
+  background: transparent;
+  width: 50%;
+  
+  position: absolute;
+  left: 25%;
+  font-size: 40px;
+  ${getDeviceType() === "mobile" &&
+  `width: 90%;;
+  position: absolute;
+  left: 5%;
+  font-size: 20px;
+	`}
+`;
+
+const EndingTag = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #c1c1c1;
+  box-shadow: 0px 10px 40px rgb(255 255 255 / 20%);
+  img {
+    border-radius: 20px;
+
+    ${getDeviceType() === "mobile" &&
+    `height: 80px;
+    width:100vw;
+	`}
+  }
+`;
