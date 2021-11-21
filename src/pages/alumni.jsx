@@ -1,30 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { BsLinkedin, BsInstagram } from "react-icons/bs";
-import {
-  SiGmail,
-  SiReact,
-  SiMcdonalds,
-  SiFacebook,
-  SiGoogle,
-  SiMicrosoft,
-  SiGithub,
-  SiGitlab,
-  SiTesla,
-  SiTwitch,
-  SiStarbucks,
-  SiPorsche,
-  SiApple,
-  SiEpicgames,
-  SiSteam,
-} from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 import { baseColor, baseStyle } from "styles/base";
 import { Parallax } from "react-parallax";
 import { CgMouse } from "react-icons/cg";
 import { getDeviceType } from "helpers";
-
-import JedliSlider, { JedliSlide } from "react-jedlislider";
-import "react-jedlislider/dist/index.css";
+import { Slider } from "components";
 
 function Alumni() {
   return (
@@ -205,92 +187,7 @@ function Alumni() {
         </BodyHeading>
 
         <BodyImg>
-          <JedliSlider
-            speed={30}
-            slidesWidth="equal"
-            visibleSlides="auto"
-            direction="rtl"
-            pauseOnHover={false}
-            style={{ color: "white", padding: "10px" }}
-          >
-            <JedliSlide>
-              <SiReact
-                onMouseOver={({ target }) => (target.style.color = "#61DBFB")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiFacebook
-                onMouseOver={({ target }) => (target.style.color = "#4267B2")}
-              />
-            </JedliSlide>
-
-            <JedliSlide>
-              <SiMicrosoft
-                onMouseOver={({ target }) => (target.style.color = "#00A4EF")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiSteam
-                onMouseOver={({ target }) => (target.style.color = "#c1c1c1")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiGithub
-                onMouseOver={({ target }) => (target.style.color = "#6e5494")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiEpicgames
-                onMouseOver={({ target }) => (target.style.color = "#A2AAAD")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiMcdonalds
-                onMouseOver={({ target }) => (target.style.color = "#FFC72C")}
-              />
-            </JedliSlide>
-
-            <JedliSlide>
-              <SiTesla
-                onMouseOver={({ target }) => (target.style.color = "#cc0000")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiTwitch
-                onMouseOver={({ target }) => (target.style.color = "#6441a5")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiStarbucks
-                onMouseOver={({ target }) => (target.style.color = "#00704A")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiPorsche
-                onMouseOver={({ target }) => (target.style.color = "yellow")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiApple
-                onMouseOver={({ target }) => (target.style.color = "#A2AAAD")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiSteam
-                onMouseOver={({ target }) => (target.style.color = "#c1c1c1")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiGoogle
-                onMouseOver={({ target }) => (target.style.color = "white")}
-              />
-            </JedliSlide>
-            <JedliSlide>
-              <SiGitlab
-                onMouseOver={({ target }) => (target.style.color = "cyan")}
-              />
-            </JedliSlide>
-          </JedliSlider>
+          <Slider />
         </BodyImg>
       </TheBody>
     </AlumniContainer>
@@ -439,9 +336,8 @@ const AlumniData = styled.div`
 `;
 
 const TheBody = styled.section`
-  height: 30vh;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  height: 40vh;
+  background-color: black;
 `;
 
 const BodyHeading = styled.div`
@@ -449,7 +345,7 @@ const BodyHeading = styled.div`
   padding-top: 50px;
   padding-bottom: 30px;
   h1 {
-    color: #c1c1c1;
+    color: #3d9be9;
     font-size: ${baseStyle.mainHeadingFont};
     font-weight: 100;
     letter-spacing: 5px;
@@ -464,7 +360,6 @@ const BodyImg = styled.div`
   border-radius: 20px;
   background: transparent;
   width: 50%;
-  
   position: absolute;
   left: 25%;
   font-size: 40px;

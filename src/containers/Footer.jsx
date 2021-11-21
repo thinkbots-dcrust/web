@@ -76,7 +76,7 @@ const Foot = styled.div`
 	background-color: black;
 	color: white;
 	width: 100%;
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	text-align: center;
 	position: absolute;
 	border-radius: 20px 20px 0 0;
@@ -104,7 +104,6 @@ const Col1 = styled.div`
 	}
 	h1 {
 		margin: 0;
-		padding: 0;
 		font-family: inherit;
 		font-size: 20px;
 		line-height: 20px;
@@ -112,7 +111,7 @@ const Col1 = styled.div`
 		font-weight: normal;
 		text-transform: uppercase;
 		letter-spacing: 0.25em;
-		padding: 10px;
+		padding: 20px;
 		@media only screen and (max-width: 950px) {
 			font-size: 14px;
 		}
@@ -142,7 +141,7 @@ const Col1 = styled.div`
 		@media only screen and (max-width: 500px) {
 			font-size: 11px;
 			margin-top: 5px;
-			padding: 8px 16px;
+			padding: 8px 20px;
 		}
 		@media only screen and (max-width: 340px) {
 			font-size: 10px;
@@ -165,7 +164,6 @@ const Col2 = styled.div`
 	}
 	h1 {
 		margin: 0;
-		padding: 0;
 		font-family: inherit;
 		font-size: 20px;
 		line-height: 20px;
@@ -173,7 +171,7 @@ const Col2 = styled.div`
 		font-weight: normal;
 		text-transform: uppercase;
 		letter-spacing: 0.25em;
-		padding: 10px;
+		padding: 20px;
 		@media only screen and (max-width: 950px) {
 			font-size: 16px;
 		}
@@ -208,7 +206,7 @@ const Col2 = styled.div`
 		@media only screen and (max-width: 500px) {
 			font-size: 11px;
 			margin-top: 5px;
-			padding: 8px 16px;
+			padding: 8px 20px;
 		}
 		@media only screen and (max-width: 340px) {
 			font-size: 10px;
