@@ -6,7 +6,7 @@ import { baseColor, baseStyle } from "styles/base";
 import { Parallax } from "react-parallax";
 import { CgMouse } from "react-icons/cg";
 import { getDeviceType } from "helpers";
-import { Slider } from "components";
+// import { Slider } from "components";
 
 function Alumni() {
   return (
@@ -186,9 +186,10 @@ function Alumni() {
           <h1>Companies prefer Us</h1>
         </BodyHeading>
 
-        <BodyImg>
+        {/* <BodyImg>
           <Slider />
-        </BodyImg>
+        </BodyImg> */}
+        
       </TheBody>
     </AlumniContainer>
   );
@@ -337,7 +338,12 @@ const AlumniData = styled.div`
 
 const TheBody = styled.section`
   height: 40vh;
-  background-color: black;
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 `;
 
 const BodyHeading = styled.div`
