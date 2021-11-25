@@ -12,6 +12,7 @@ import { NavBar, Footer } from "containers";
 import { Suspense } from "react";
 import { Loader } from "@react-three/drei";
 import { baseColor } from "styles/base";
+import ProfilePage from "pages/profile";
 
 export default function App() {
   return (
@@ -60,8 +61,11 @@ export default function App() {
               <Events />
             </Route>
             <Route exact path="/alumni">
-            <Alumni />
-          </Route>
+              <Alumni />
+            </Route>
+            <Route exact path="/profile">
+              <ProfilePage />
+            </Route>
             <Route>
               <Page404 />
             </Route>
