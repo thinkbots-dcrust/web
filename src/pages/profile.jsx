@@ -69,23 +69,29 @@ function ProfilePage() {
 export default ProfilePage;
 
 const ProfileOuter = styled.div`
-  height: 99vh;
-  margin: auto;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: #643a7a;
 `;
 const ProfileContainer = styled.div`
-  margin: auto;
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 const UpperProfile = styled.div`
-  margin: auto;
   display: flex;
-  justify-content: space-around;
+  height: 100%;
 `;
 const FlipcardSection = styled.div``;
 const InfoSection = styled.div``;
 const PastPerformancesSection = styled.div``;
-const UpperInfoSection = styled.div``;
+const UpperInfoSection = styled.div`
+  h4 {
+    color: whitesmoke;
+  }
+`;
 const MainInfoSection = styled.div``;
 const LowerInfoSection = styled.div``;
