@@ -12,9 +12,6 @@ function FlipCard() {
               <p className="flip-me">Flip Me</p>
               <div className="line line-1"></div>
               <div className="line line-2"></div>
-              <a>
-                <BsHeart className="fa-heart" />
-              </a>
             </div>
 
             <div className="back">

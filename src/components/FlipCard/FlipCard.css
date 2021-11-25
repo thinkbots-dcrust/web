@@ -5,16 +5,15 @@
   font-family: "nunito", sans-serif;
   height: 100vh;
   width: 100vw;
+  margin: 0;
+  padding: 3em;
 }
 
 .frame {
-  position: absolute;
   background-color: #201c29;
-  top: 30%;
-  left: 5%;
+  border-radius: 1rem;
   width: 35%;
   height: 38%;
-  border-radius: 2px;
   box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.6);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 2rem;
 }
 .flip-me {
   position: absolute;
@@ -35,23 +35,22 @@
 }
 .card {
   width: 80%;
-  height: 40%;
+  height: 50%;
   padding: 1rem;
-  background: linear-gradient(178deg, #ef2f96, #ad2fed, #ad2fed, #d53070);
+  background: linear-gradient(178deg, #ad2fed, #d53070);
   background-size: 600% 600%;
-  animation: background 7s ease infinite;
-  perspective: 800px;
+  animation: background 5s ease infinite;
+  /* perspective: 800px; */
 }
 
 h1,
 h2,
 .fa-heart {
-  background: linear-gradient(124deg, #e6740a, #2ce73b, #ad2fed, #d53070);
-  background-size: 600% 600%;
+  background: linear-gradient(124deg, #e6740a, #2ce73b, #12eee3, #83e00a);
+  background-size: 200% 200%;
   background-clip: text;
-  /* color: whitesmoke; */
   -webkit-text-fill-color: transparent;
-  animation: background 7s ease infinite;
+  animation: background 4s ease infinite;
 }
 
 .front > h1 {
@@ -74,7 +73,7 @@ p {
   position: absolute;
   top: 60%;
   left: 10%;
-  background: -webkit-linear-gradient(red, #eee);
+  background: -webkit-linear-gradient(red, rgb(241, 158, 158));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0.8rem 0 0.2rem 0.5rem;
@@ -85,11 +84,12 @@ p:nth-of-type(2) {
 }
 .hvr-outline-in {
   position: relative;
+  border-radius: 1.3rem;
 }
 .hvr-outline-in:before {
   content: "";
   position: absolute;
-  border: 1px solid #ad2fed;
+  border: 1px solid wheat;
   top: -16px;
   right: -16px;
   bottom: -16px;
@@ -140,7 +140,7 @@ p:nth-of-type(2) {
 }
 
 .back h2 {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   margin: 0.5rem;
 }
 
@@ -149,7 +149,7 @@ p:nth-of-type(2) {
   font-family: satisfy, cursive;
   font-weight: 300;
   font-size: 1.9rem;
-  margin: 1.8rem;
+  margin: 1.4rem;
 }
 
 .front i {
@@ -193,12 +193,14 @@ p:nth-of-type(2) {
 
 .social {
   font-size: 1.3rem;
-  color: fade-out(#fff, 0.6);
 }
 .social a {
   padding: 0 0.5rem;
+  color: whitesmoke;
+  opacity: 0.6;
 }
-.social a *:hover {
-  color: fade-out(#fff, 0.3);
+.social a:hover {
+  color: whitesmoke;
+  opacity: 1;
   cursor: pointer;
 }
