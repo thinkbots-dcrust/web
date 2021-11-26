@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { baseColor, baseStyle } from "styles/base";
 import { Button } from "components";
+import { getDeviceType } from "helpers";
 
 const sampleEventImageUrl =
 	"https://img.freepik.com/free-vector/music-event-poster-template-with-abstract-shapes_1361-1316.jpg?size=626&ext=jpg";
@@ -21,14 +22,19 @@ export default function EventsCards() {
 }
 
 const MainWrapper = styled.div`
-	background-color: ${baseColor.surface};
-	height: 500px;
-	width: 500px;
-	margin: 30px 40px;
-	border-radius: 40px;
-	overflow: hidden;
-	box-shadow: ${baseStyle.boxShadowMild};
-	color: ${baseColor.onBackground};
+  background-color: ${baseColor.surface};
+  height: 500px;
+  width: 500px;
+  margin: 30px 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: ${baseStyle.boxShadowMild};
+  color: ${baseColor.onBackground};
+  ${getDeviceType() === "mobile" &&
+  `
+        margin: 10px;
+        width: 500px;
+	`}
 `;
 const ViewDetailsBtn = styled(Button)`
 	margin-top: 10px;

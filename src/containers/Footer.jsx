@@ -79,7 +79,7 @@ const Foot = styled.div`
 	/* padding-top: 10px; */
 	text-align: center;
 	position: absolute;
-	border-radius: 20px 20px 0 0;
+	/* border-radius: 20px 20px 0 0; */
 	border-top-style: solid;
 	border-color: #3d9be9;
 	left: 0;
