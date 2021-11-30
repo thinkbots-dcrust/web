@@ -2,14 +2,17 @@
 
 .flipcard-container {
   font-family: "nunito", sans-serif;
-  padding: 3em;
+  padding: 2em;
+  margin: 0;
+  margin-left: -4em;
+  margin-top: 1.8em;
 }
 
 .frame {
   background-color: #201c29;
   border-radius: 1rem;
   width: 90%;
-  height: 400px;
+  height: 300px;
   box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.6);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
@@ -24,13 +27,13 @@
 }
 .flip-me {
   position: absolute;
-  top: 30%;
-  left: 85%;
-  font-size: 1.3rem;
+  top: 40%;
+  left: 80%;
+  font-size: 0.9rem;
   transform: rotate(-90deg);
 }
 .card {
-  width: 80%;
+  width: 75%;
   height: 50%;
   padding: 1rem;
   background: linear-gradient(178deg, #ad2fed, #d53070);
@@ -40,8 +43,7 @@
 }
 
 h1,
-h2,
-.fa-heart {
+h2 {
   background: linear-gradient(124deg, #e6740a, #2ce73b, #12eee3, #83e00a);
   background-size: 200% 200%;
   background-clip: text;
@@ -51,8 +53,9 @@ h2,
 
 .front > h1 {
   font-family: Satisfy, cursive;
-  font-size: 8rem;
-  margin: 1rem 5rem;
+  font-size: 4rem;
+  text-align: center;
+  margin: 5rem 5rem;
   text-shadow: 0.2rem 0.2rem 0.5rem fade-out(black, 0.8);
 }
 @keyframes background {
@@ -71,6 +74,7 @@ p {
   left: 10%;
   background: -webkit-linear-gradient(red, rgb(241, 158, 158));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0.8rem 0 0.2rem 0.5rem;
 }
@@ -138,6 +142,7 @@ p:nth-of-type(2) {
 
 .back h2 {
   font-size: 2.1rem;
+  text-align: center;
   margin: 0.5rem;
 }
 
@@ -145,24 +150,11 @@ p:nth-of-type(2) {
   color: whitesmoke;
   font-family: satisfy, cursive;
   font-weight: 300;
+  text-align: center;
   font-size: 1.9rem;
-  margin: 1.4rem;
+  margin: 2rem;
 }
 
-.front i {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 2rem;
-  transform: rotate(45deg);
-}
-.back .fa-heart {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 2rem;
-  transform: rotate(135deg);
-}
 .line {
   width: 2rem;
   height: 2px;

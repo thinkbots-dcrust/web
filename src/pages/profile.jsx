@@ -16,18 +16,19 @@ function ProfilePage() {
             <FlipCard />
           </FlipcardSection>
           {/*  */}
-          <InfoSection>
-            {/* need to add info here */}
-            <UpperInfoSection>
-              {/* 
+          <RightProfileSection>
+            <InfoSection>
+              {/* need to add info here */}
+              <UpperInfoSection>
+                {/* 
                    -Name (h2)
                    -current rating
-                   -edit icon(h4)
+                   -edit icon(h3)
                 */}
-              <h2>Name Surame</h2>
-            </UpperInfoSection>
-            <MainInfoSection>
-              {/* 
+                <h2>Leo Messi</h2>
+              </UpperInfoSection>
+              <MainInfoSection>
+                {/* 
                   -username
                   -country
                   -state
@@ -37,23 +38,25 @@ function ProfilePage() {
                   -year
                   -gender
                 */}
-              <h4>username</h4>
-              <h4>username</h4>
-              <h4>username</h4>
-              <h4>username</h4>
-              <h4>username</h4>
-              <h4>username</h4>
-              <h4>username</h4>
-              <h4>username</h4>
-            </MainInfoSection>
-            <LowerInfoSection>
-              {/* 
+
+                <h3>username : </h3>
+                <h3>country : </h3>
+                <h3>state : </h3>
+                <h3>city : </h3>
+                <h3>Institution : </h3>
+                <h3>branch : </h3>
+                <h3>year : </h3>
+                <h3>gender : </h3>
+              </MainInfoSection>
+              <LowerInfoSection>
+                {/* 
                    -social links
                       -insta
                       -linkedin
                 */}
-            </LowerInfoSection>
-          </InfoSection>
+              </LowerInfoSection>
+            </InfoSection>
+          </RightProfileSection>
         </UpperProfile>
         {/*  */}
         <PastPerformancesSection>
@@ -73,25 +76,59 @@ const ProfileOuter = styled.div`
   width: 100vw;
   margin: 0;
   padding: 0;
-  background-color: #643a7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 70%;
+  width: 70%;
+  padding: 1em;
+  background-color: #643a7a;
+  border-radius: 1rem;
+  margin-top: -4em;
+  box-shadow: 0.5rem 1rem 1rem rgba(100, 58, 122, 0.5);
+`;
+
+const RightProfileSection = styled.div`
+  padding: 1em;
 `;
 
 const UpperProfile = styled.div`
+  width: 70%;
   display: flex;
-  height: 100%;
+  flex-direction: row;
+  align-self: center;
+  align-content: center;
 `;
-const FlipcardSection = styled.div``;
-const InfoSection = styled.div``;
+const FlipcardSection = styled.div`
+  margin-top: 1.8em;
+  min-width: 50%;
+  min-height: 100%;
+`;
+
+const InfoSection = styled.div`
+  display: flex;
+  min-width: 60%;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: start;
+  margin: 4.5em 3em;
+`;
 const PastPerformancesSection = styled.div``;
 const UpperInfoSection = styled.div`
-  h4 {
+  h2 {
+    font-size: 1.8rem;
+  }
+`;
+const MainInfoSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  h3 {
+    padding: 0.1em;
     color: whitesmoke;
   }
 `;
-const MainInfoSection = styled.div``;
 const LowerInfoSection = styled.div``;

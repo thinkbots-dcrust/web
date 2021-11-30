@@ -15,16 +15,15 @@ function FlipCard() {
             </div>
 
             <div className="back">
-              <i className="fa fa-heart"></i>
               <h3>Atul</h3>
               <div className="line line-3"></div>
               <h2>Web Developer</h2>
               <div className="social">
                 <a>
-                  <BsInstagram />
+                  <BsInstagram id="insta-icon" />
                 </a>
                 <a>
-                  <BsLinkedin />
+                  <BsLinkedin id="linked-icon" />
                 </a>
               </div>
             </div>
