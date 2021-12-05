@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { baseColor } from "styles/base";
 import logo from "assets/thinkbots_main_logo.svg";
 import { useState } from "react";
-// import Signin from "./Signin";
-// import Register from "./Register";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 function Login() {

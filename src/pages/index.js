@@ -5,5 +5,5 @@ import Login from "./login";
 import Events from "./events";
 import Page404 from "./Page404";
 import Alumni from "./alumni";
-
-export { Events, Homepage, Team, Faq, Page404, Login, Alumni };
+import Project from './project';
+export { Events, Homepage, Team, Faq, Page404, Login, Alumni, Project };

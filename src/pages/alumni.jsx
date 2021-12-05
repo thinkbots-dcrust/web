@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { BsLinkedin, BsInstagram } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
@@ -6,6 +6,7 @@ import { baseColor, baseStyle } from "styles/base";
 import { Parallax } from "react-parallax";
 import { CgMouse } from "react-icons/cg";
 import { getDeviceType } from "helpers";
+// import { Slider } from "components";
 
 function Alumni() {
   return (
@@ -176,11 +177,19 @@ function Alumni() {
         </AlumniBar>
       </AlumniSec>
 
+      <EndingTag>
+        <img src="/images/paid/ending2.png" alt="img-error" />
+      </EndingTag>
+
       <TheBody>
         <BodyHeading>
           <h1>Companies prefer Us</h1>
         </BodyHeading>
-        <BodyImg></BodyImg>
+
+        {/* <BodyImg>
+          <Slider />
+        </BodyImg> */}
+        
       </TheBody>
     </AlumniContainer>
   );
@@ -292,14 +301,15 @@ const AlumniImg = styled.div`
   img {
     padding: 0px;
     border-radius: 40px 0px 0px 40px;
-    height: 200px;
-    width: 200px;
+    border: 2px solid rgba(35, 35, 36, 0.95);
+    height: 196px;
+    width: 196px;
   }
   ${getDeviceType() === "mobile" &&
   `
 	img {
-    height: 150px;
-    width: 150px;
+    height: 148px;
+    width: 148px;
   }
 	`}
 `;
@@ -327,24 +337,59 @@ const AlumniData = styled.div`
 `;
 
 const TheBody = styled.section`
-  height: 30vh;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  ${getDeviceType() === "mobile" &&
-  `
-    height: 90vh;
-	`}
+  height: 40vh;
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
 `;
 
 const BodyHeading = styled.div`
-text-align: center;
-padding-top: 50px;
-h1{
-
-    color: white;
-    font-size: ${baseStyle.mainTextFont};
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  h1 {
+    color: #3d9be9;
+    font-size: ${baseStyle.mainHeadingFont};
     font-weight: 100;
-    font-family: 'monospace', sans-serif;
-}
+    letter-spacing: 5px;
+    ${getDeviceType() === "mobile" &&
+    `font-size: ${baseStyle.subHeadingFont};
+    letter-spacing: 0px;
+	`}
+  }
 `;
-const BodyImg = styled.div``;
+const BodyImg = styled.div`
+  margin-top: 20px;
+  border-radius: 20px;
+  background: transparent;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  font-size: 40px;
+  ${getDeviceType() === "mobile" &&
+  `width: 90%;;
+  position: absolute;
+  left: 5%;
+  font-size: 20px;
+	`}
+`;
+
+const EndingTag = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #c1c1c1;
+  box-shadow: 0px 10px 40px rgb(255 255 255 / 20%);
+  img {
+    border-radius: 20px;
+
+    ${getDeviceType() === "mobile" &&
+    `height: 80px;
+    width:100vw;
+	`}
+  }
+`;

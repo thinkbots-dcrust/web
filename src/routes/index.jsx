@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 
-import { Homepage, Team, Faq, Page404, Login, Events, Alumni } from "pages";
+import { Homepage, Team, Faq, Page404, Login, Events, Alumni, Project } from "pages";
 import { NavBar, Footer } from "containers";
 import { Suspense } from "react";
 import { Loader } from "@react-three/drei";
@@ -60,8 +60,11 @@ export default function App() {
               <Events />
             </Route>
             <Route exact path="/alumni">
-            <Alumni />
-          </Route>
+              <Alumni />
+            </Route>
+            <Route exact path="/projects">
+              <Project />
+            </Route>
             <Route>
               <Page404 />
             </Route>
